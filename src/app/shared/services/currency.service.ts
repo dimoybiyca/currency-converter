@@ -23,31 +23,27 @@ export class CurrencyService {
           .filter(
             (rate) => rate.currencyCodeA === 840 || rate.currencyCodeA === 978
           )
-          .map((rate) => this.convertResponse(rate))
+          .map(this._convertResponse)
       )
     );
   }
 
-  private convertResponse(
+  private _convertResponse = (
     response: CurrencyResponseInterface
-  ): CourseInterface {
-    const rate: CourseInterface = {
+  ): CourseInterface => {
+    return {
       ccy: this.getCode(response.currencyCodeA),
       buy: response.rateBuy,
       sell: response.rateSell,
     };
-
-    return rate;
-  }
+  };
 
   private getCode(num: number) {
-    switch (num) {
-      case 840:
-        return 'USD';
-      case 978:
-        return 'EUR';
-    }
+    const codeMappings: Record<number, string> = {
+      840: 'USD',
+      978: 'EUR',
+    };
 
-    throw new Error('Unknown code');
+    return codeMappings[num] || 'Unknown code';
   }
 }
