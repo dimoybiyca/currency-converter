@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="rates" *ngIf="rates$ | async as rates">
+        <cc-course *ngFor="let rate of rates" [course]="rate"> </cc-course>
+
+        <button class="refresh-button" (click)="onRefreshClick()">
+          <img
+            [ngClass]="{ spin: isLoading$ | async }"
+            src="assets/img/refresh.svg"
+            alt=""
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

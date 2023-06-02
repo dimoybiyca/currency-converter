@@ -1,0 +1,53 @@
+.header {
+  font-size: 28px;
+  background-color: #26278d;
+  margin-bottom: 50px;
+}
+
+.header-inner {
+  padding: 10px;
+}
+
+.rates {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+}
+
+.refresh-button {
+  height: 40px;
+  width: 40px;
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 24px;
+  }
+
+  .rates {
+    display: flex;
+    justify-content: start;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+  }
+
+  .refresh-button {
+    order: -1;
+  }
+}

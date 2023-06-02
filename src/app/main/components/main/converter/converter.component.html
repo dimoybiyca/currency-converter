@@ -1,0 +1,28 @@
+<div class="converter">
+  <div class="converter-input">
+    <cc-currency-input
+      [currencies]="currencies"
+      [disabled]="targetCurrency.ccu"
+      [values]="baseCurrency"
+      (amountChange)="onBaseCurrencyChange()"
+      (currencyChange)="onBaseCurrencyChange()"
+    ></cc-currency-input>
+
+    <button class="swap-button" (click)="onSwapClick()">
+      <img src="assets/img/swap.svg" alt="" />
+    </button>
+
+    <cc-currency-input
+      [currencies]="currencies"
+      [disabled]="baseCurrency.ccu"
+      [values]="targetCurrency"
+      (amountChange)="onTargetCurrencyChange()"
+      (currencyChange)="onBaseCurrencyChange()"
+    ></cc-currency-input>
+  </div>
+
+  <cc-conversion-result
+    [baseCurrency]="baseCurrency"
+    [targetCurrency]="targetCurrency"
+  ></cc-conversion-result>
+</div>

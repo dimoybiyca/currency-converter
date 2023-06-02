@@ -1,0 +1,32 @@
+.converter-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.swap-button {
+  display: block;
+  background-color: #26278d;
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+}
+
+.swap-button:active {
+  transition: all 0.1s;
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+}
+
+@media (max-width: 1220px) {
+  .converter-input {
+    flex-direction: column;
+  }
+
+  .swap-button {
+    margin: 30px 0;
+    transform: rotate(90deg);
+  }
+}

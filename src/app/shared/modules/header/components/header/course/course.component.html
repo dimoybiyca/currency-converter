@@ -1,0 +1,12 @@
+<div class="course">
+  <div class="course-inner">
+    <img
+      class="flag"
+      [src]="'assets/img/' + courseProps.ccy + '.svg'"
+      alt="Country flag"
+    />
+    <span class="rate">{{ courseProps.buy | number : "1.2-2" }}</span>
+    <span class="divider">|</span>
+    <span class="rate">{{ courseProps.sell | number : "1.2-2" }}</span>
+  </div>
+</div>

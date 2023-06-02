@@ -1,0 +1,25 @@
+<div class="currency-input">
+  <cc-flag [code]="values.ccu" [height]="100"></cc-flag>
+
+  <select
+    class="select"
+    [(ngModel)]="values.ccu"
+    (ngModelChange)="onCurrencyChange()"
+  >
+    <option
+      *ngFor="let currency of currenciesProps"
+      [disabled]="currency === disabledProps"
+    >
+      {{ currency }}
+    </option>
+  </select>
+
+  <input
+    class="input"
+    type="number"
+    min="0"
+    step="0.01"
+    [(ngModel)]="values.amount"
+    (ngModelChange)="onAmountChange()"
+  />
+</div>

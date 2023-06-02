@@ -1,0 +1,13 @@
+<div class="result" *ngIf="isNotBlank()">
+  <span class="currency">{{
+    baseCurrencyProps.amount
+      | currency : baseCurrencyProps.ccu : "symbol-narrow"
+  }}</span>
+
+  <span class="divider"> = </span>
+
+  <span class="currency">{{
+    targetCurrencyProps.amount
+      | currency : targetCurrencyProps.ccu : "symbol-narrow"
+  }}</span>
+</div>

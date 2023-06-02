@@ -1,0 +1,22 @@
+.currency-input {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.select {
+  width: 100px;
+}
+
+.input {
+  height: 45px;
+  width: 250px;
+  border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+  .currency-input {
+    justify-content: center;
+  }
+}
