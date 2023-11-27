@@ -25,4 +25,12 @@
     [baseCurrency]="baseCurrency"
     [targetCurrency]="targetCurrency"
   ></cc-conversion-result>
+
+  <button
+    class="rm-btn"
+    *ngIf="(converters$ | async).length > 1"
+    (click)="onDeleteClick()"
+  >
+    <img src="assets/img/delete.svg" alt="X" />
+  </button>
 </div>

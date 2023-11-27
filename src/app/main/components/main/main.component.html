@@ -1,6 +1,13 @@
 <div class="container">
   <cc-spinner *ngIf="isLoading$ | async"></cc-spinner>
   <div class="block">
-    <cc-converter></cc-converter>
+    <cc-converter
+      *ngFor="let converter of converters$ | async"
+      [converter]="converter"
+    ></cc-converter>
+
+    <div class="btn-wrapper">
+      <cc-add-button (onClick)="onAddClick($event)"></cc-add-button>
+    </div>
   </div>
 </div>

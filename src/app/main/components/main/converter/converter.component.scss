@@ -1,3 +1,25 @@
+.converter {
+  display: block;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.rm-btn {
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  height: 40px;
+  width: 40px;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
 .converter-input {
   display: flex;
   align-items: center;

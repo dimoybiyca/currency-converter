@@ -5,6 +5,11 @@ import { CourseInterface } from 'src/app/shared/types/course.interface';
 import { CurrencyResponseInterface } from 'src/app/shared/types/currency-response.interface';
 import { environment } from 'src/environments/environment.development';
 
+const codeMappings: Record<number, string> = {
+  840: 'USD',
+  978: 'EUR',
+};
+
 @Injectable({
   providedIn: 'root',
 })
@@ -20,8 +25,8 @@ export class CurrencyService {
       map((rates) =>
         rates
           .filter((rate) => rate.currencyCodeB === 980)
-          .filter(
-            (rate) => rate.currencyCodeA === 840 || rate.currencyCodeA === 978
+          .filter((rate) =>
+            Object.keys(codeMappings).includes(rate.currencyCodeA.toString())
           )
           .map(this._convertResponse)
       )
@@ -39,11 +44,6 @@ export class CurrencyService {
   };
 
   private getCode(num: number) {
-    const codeMappings: Record<number, string> = {
-      840: 'USD',
-      978: 'EUR',
-    };
-
     return codeMappings[num] || 'Unknown code';
   }
 }
